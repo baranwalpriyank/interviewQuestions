@@ -88,8 +88,35 @@ to delete tag from reemote repository first we need to delete the tag and push t
 
  
 6. Command to create/delete/rename a branch?
-Ans:
+Ans: Command to create a branch:
+---	git banch <branchName>
+---	git checkout -b <banchName> #creating a new branch and checking out to the new branch
+	
+	Command to delete a branch:
+---	git branch -d <branchName>
+---	git branch -D <branchName> #forcefully deleting a branch
+---	git push <remote> :<remoteBranch> #pushing a empty localbranch name deletes branch from remote repository
+	
+	Command to rename a branch:
+	renaming branch on local machine
+	if on the branch which needs to be renamed:
+---	git branch -m new-name
+	if on different branch 
+---	git branch -m old-name new-name
+
+	delete the old-name remote branch name and push the new-name local branch
+---	git push origin :old-name new-name
+	
+	reset the upstream branch for the new-name local branch
+	switch to the branch and then use the following command:
+---	git push origin -u new-name
+	
+	
 7. Once git push is done, how to run Jenkins job automatically without configure Build Periodical or Poll SCM? i.e., post-commit hook script.
+Ans: post-commit hook 
+
+
+
 8. Diff between reset, revert, rebasae.
 9. Diff between soft, mixed, hard in reset. Default reset is mixed.
 10. Create a new branch/tag from particulat commit-id?
