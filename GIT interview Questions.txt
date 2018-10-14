@@ -1,0 +1,102 @@
+3.2. GitHub:- 
+-------------
+
+Common Commands:-
+init: git init (creates a new subdirectory named .git that contains all of your necessary repository files -a git repository skeleton.)
+clone: git clone <url> and git clone <url> <target directory name> (instead of getting just a working copy, GIT receives a full copy of nearly all data that server has) 
+status: git status (command to get the information about the untracked files, i.e., the file which were not part of last commit.)
+add: git add <filename> or git add -A or git add . (git add command is used to chaged the file status from untracked to tracked state and staged to be commited, once the newly created file has been added and then any modification is done that by doing status it shows the file under "Changes not staged for commit" unlike for any newly created file for the first add command it shows under "Untracked files" )
+commit: git commit -m "message" or git commit -a -m "message" (git commit is to record the snapshot set up in staging area, -a command is used to skip the git add command.)
+rm: rm <fileName> (command will remove the file and it will be shown under "Changes not staged for commit" in this case we first need to use "git add/rm <fileName>" to update what will be committed or to add it for "Changes to be committed" )
+amend: git commit --amend (this command takes the staging area and uses it for commit, if no changes have been made since last commit, then the snapshot will look exactly same, all that needed to be changed would be commit message.)
+remote: git remote (to view all the remote repository URL and "git clone <URL>" command automatically adds that git repository under the name origin and for explicitly adding remote repository URL the command used is "git remote add <shortname> <URL>")
+		git remote add <shortname> <URL> (command to add new git remote repository)
+		git remote rename <oldName> <newName> (renaming the remote)
+		git remote remove <name> (deleting the reference will delete all the configrations settings associated to that remote)
+fetch: git fetch <remote> (the command goes out to that remote project and pulls down all the data from that remote project that the local repository don't have yet. fetch only downloads the latest data to local repository, it doesn't automatically merge it with any of the modified file. Merge needs to be performed manually.)
+pull: git pull <remote> (it fetchs the data and try to merge the changes in the current working directory, so it can be said that "git pull = git fetch + git merge")		
+push: git push <remote> <branch> (pushng local changes to repository so that other people can have the changes and can work on them. Before attempting to push the changes we need to do git pull to check if the code we have in our local is latest or not if the code is not latest,i.e., if some other peson working on the same repositorymight have checked-in some changes before we do commit then the push will fail giving error to first update the repository and then push the changes to remote repository.)
+tag: git tag -a vx.x -m "annotated tag" (example of annotated tag )
+	 git tag vx.x (example of lightweight tag)
+
+rebase: git rebase
+revert, reset, stash, diff, add, commit, merge, branch.
+
+	1. Create new one
+
+		Create new Organization.
+		Create new forked branch from default branch.
+		Create new orphan branch.
+		Create a new branch/tag from particulat commit-id.
+
+	2. Create new team.
+		Add an user to the team (granting access).
+		Add a repo to the team with read/write/admin access.
+
+	3. Hooks.
+		pre-receive hooks.
+		web-hooks.
+
+	4. Integrations:-
+		Integrate GitHub to Jenkins.
+		Integrate GitHub to JIRA.
+		Integrate Jenkins to JIRA.
+
+	5. bare repo?
+
+Interview questions:-
+---------------------
+1. What is GitHub?
+Ans: Git is an open source distributed version controlling system. It is mainly used for source code management in software development. It is a command line interface.
+Github is web-based hosting service for version control using git.
+
+2. How GitHub famous?
+Ans: 
+
+3. Differences between SVN and GitHub?
+Ans:	SVN is a centralized version Controlling system. In SVN if a developer has checked out any particular file and other developer wants to make changes to the same file then SVN won't allow as the file would be locked by the first user as both of the developer would be working on the single copy of file and only one can check out the file at a time.
+		Git is a distributed version control system. In git every developer has its own copy of the repository on their local machine as git works on the principle of cloning, in GIT developers clone the remote repository and they work on their local repository present on their hard-drive. A copy of project is stored in every developer's local machine chages are either pushed to remote to update the remote repository or pulled from remote to update the local copy.
+
+
+4. Branching strategy?
+
+
+5. Command to create/delete/rename a tag?
+Ans: Tags are used in git to mark specific points in history as being important. Typically it is used to mark the release points.
+command to list all the tags: git tag or git tag -l "v1.8.*" or git tag --list "v1.8.5*" (using -l or --list is important when we want to view some specific version of tags using wildcards)
+Git support two types of tags: Annotated and lightweight tags.
+
+Annotated tags: annotated tag is a discriptive way to use tag as it contains the important important like the tagger information, the date commit was tagged and aanotated message before showing the commit information.
+
+Lightweight Tag: This basically commit the checksum stored in file - and no other information is kept.
+
+Command to create tag: 
+annotated tag: git tag -a vX.X -m "message "
+lightweight tag: git tag vX.X
+
+to push tag to remote server :
+git push <remote> refs/tags/<source-ref-tagname>:refs/tags/<destination-ref-tagname> (any specific tag)
+git push <remote> --tags (push all the tags to remote repository.)
+
+deleting tag:
+removing tag on local repository: git tag -d <tagname>
+removing tag from remote repository: git push <remote> :refs/tags/<destination-ref-tagname> ( by ommiting the source ref,i.e., the part before the colon, nothing is pushed to destination which results in deleting the reference on remote end.)
+
+renaming a tag:
+git tag <newName> <oldNAme> (local repository)
+to delete tag from reemote repository first we need to delete the tag and push the new tag to remote
+
+ 
+6. Command to create/delete/rename a branch?
+Ans:
+7. Once git push is done, how to run Jenkins job automatically without configure Build Periodical or Poll SCM? i.e., post-commit hook script.
+8. Diff between reset, revert, rebasae.
+9. Diff between soft, mixed, hard in reset. Default reset is mixed.
+10. Create a new branch/tag from particulat commit-id?
+11. Rename the tag?
+12. Rename the branch?
+13. How to edit commit messages?
+14. gitk command.
+15. Resolve merge conflicts. Command is "git add .".
+16. Git stage, stash etc.
+17. Move a repository from one organization to another organization.
