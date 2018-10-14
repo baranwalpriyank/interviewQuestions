@@ -20,7 +20,7 @@ tag: git tag -a vx.x -m "annotated tag" (example of annotated tag )
 	 git tag vx.x (example of lightweight tag)
 
 rebase: git rebase
-revert, reset, stash, diff, add, commit, merge, branch.
+revert, reset, stash, merge, branch.
 
 	1. Create new one
 
@@ -121,9 +121,28 @@ Ans: post-commit hook
 9. Diff between soft, mixed, hard in reset. Default reset is mixed.
 10. Create a new branch/tag from particulat commit-id?
 11. Rename the tag?
+Ans: git remote <newName> <oldName> (local repository)
+    to delete a remote tag from repository first we need to delete the tag by using git push <remote> :ref/tags/<tagName> and once the tag is deleted we can push the new tag to remote by using "git push --tags or git push <remote> ref/tags/<tag-name>:ref/tags/<tag-Name>"
+
 12. Rename the branch?
+Ans: git branch -m newName (if we are on the branch which name needs to be updated)
+	 git branch -m oldName newName (if on any other branch)
+	 
+	 
 13. How to edit commit messages?
+Ans: git commit --amend
+
 14. gitk command.
+Ans: 
+
+
 15. Resolve merge conflicts. Command is "git add .".
+Ans:
+ 
 16. Git stage, stash etc.
+Ans: stage:A commit in Git is erformed in two steps:staging and acual commit, it is a pre commit step it is performed by git add , it adds the changes in staging area which can be edited remove or changed.
+	stash: stash is a temporary storage of file and changes which can be reapplied when needed
+		git stash ( to commit all the current file changes to stash memory)
+		git stash pop (to remove the changes from stack and place them in current working directory)
+		
 17. Move a repository from one organization to another organization.
