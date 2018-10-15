@@ -20,7 +20,8 @@ tag: git tag -a vx.x -m "annotated tag" (example of annotated tag )
 	 git tag vx.x (example of lightweight tag)
 
 rebase: git rebase
-revert, reset, stash, merge, branch.
+revert: git revert <commitID> (git revert is used to undo certain change to a repository commit history. It does not move the ref point to any commit rather it creates a new commit and all the commits would be present in history so it would be easy to track.)  
+reset, stash, merge, branch.
 
 	1. Create new one
 
