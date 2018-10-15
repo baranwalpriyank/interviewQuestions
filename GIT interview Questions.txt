@@ -43,7 +43,7 @@ revert, reset, stash, merge, branch.
 		Integrate Jenkins to JIRA.
 
 	5. bare repo?
-
+	Ans: the .git file created when we initialize that is called bare repo.
 Interview questions:-
 ---------------------
 1. What is GitHub?
